@@ -1,4 +1,6 @@
 # ML_Deteksipenipuanbank
+<img width="1859" height="937" alt="Screenshot 2026-04-17 134222" src="https://github.com/user-attachments/assets/2cda793f-d866-4967-be04-23f784620492" />
+
 
 ## 🏦 Bank Fraud Detection Machine Learning Project
 
@@ -12,36 +14,6 @@ Proyek ini mengembangkan sistem deteksi penipuan bank menggunakan berbagai algor
 
 - **Clustering**: Mengidentifikasi pola dan kelompok transaksi mencurigakan
 - **Klasifikasi**: Memprediksi apakah suatu transaksi merupakan fraud atau legitimate
-
----
-
-## 📁 Struktur Direktori
-
-```
-ML_Deteksipenipuanbank/
-├── BMLP_Wahid-Ivan-Saputra/
-│   ├── [Clustering]_Submission_Akhir_BMLP_Wahid_Ivan_Saputra.ipynb
-│   ├── [Klasifikasi]_Submission_Akhir_BMLP_Wahid_Ivan_Saputra.ipynb
-│   ├── ml_project.ipynb
-│   ├── generate_submission_files.py
-│   ├── organize.py
-│   ├── decision_tree_model.h5
-│   ├── fraud_detection_pipeline.pkl
-│   ├── model_clustering
-│   ├── test.txt
-│   └── README.md
-│
-├── web_app/
-│   ├── main.py
-│   └── static/
-│       ├── index.html
-│       ├── script.js
-│       └── style.css
-│
-└── README.md (file ini)
-```
-
----
 
 ## 🔧 Komponen Proyek
 
