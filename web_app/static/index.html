@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Fraud Detection | Transaction Operations</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+    <div class="blob shape-1"></div>
+    <div class="blob shape-2"></div>
+    <div class="blob shape-3"></div>
+
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo">
+                <i data-feather="shield"></i>
+                <h2>SecureBank Core</h2>
+            </div>
+            <nav class="menu">
+                <a href="#" class="active"><i data-feather="activity"></i> Scanner</a>
+                <a href="#"><i data-feather="pie-chart"></i> Analytics</a>
+                <a href="#"><i data-feather="users"></i> Accounts</a>
+                <a href="#"><i data-feather="settings"></i> Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <div>
+                    <h1>Security Operations Center</h1>
+                    <p>Real-time transaction analysis module</p>
+                </div>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" alt="Admin">
+                </div>
+            </header>
+
+            <div class="content-grid">
+
+                <section class="scan-panel glass">
+                    <h3><i data-feather="terminal"></i> Input Transaction Parameters</h3>
+
+                    <form id="fraudForm">
+                        <div class="input-grid">
+                            <!-- Numeric -->
+                            <div class="input-group">
+                                <label for="TransactionAmount">Amount (IDR)</label>
+                                <!-- Value 450.50 disesuaikan ke nominal Rupiah -->
+                                <input type="number" step="1000" id="TransactionAmount" required value="450000">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="AccountBalance">Account Balance (IDR)</label>
+                                <!-- Value 5200.00 disesuaikan ke nominal Rupiah -->
+                                <input type="number" step="1000" id="AccountBalance" required value="5200000">
+                            </div>
+                            <div class="input-group">
+                                <label for="CustomerAge">Customer Age</label>
+                                <input type="number" id="CustomerAge" required value="32">
+                            </div>
+                            <div class="input-group">
+                                <label for="TransactionDuration">Duration</label>
+                                <input type="time" id="TransactionDuration" required value="00:45">
+                            </div>
+
+                            <!-- Added Features -->
+                            <div class="input-group">
+                                <label for="TimeSinceLast">Seconds Since Last Trx</label>
+                                <input type="number" id="TimeSinceLast" required value="3600">
+                            </div>
+                            <div class="input-group">
+                                <label for="TransactionHour">Hour (00:00-23:59)</label>
+                                <input type="time" id="TransactionHour" required value="19:00">
+                            </div>
+
+                            <!-- Categorical mockups -->
+                            <div class="input-group">
+                                <label for="TransactionType">Trx Type</label>
+                                <select id="TransactionType">
+                                    <option value="0">Debit</option>
+                                    <option value="1">Credit</option>
+                                    <option value="2">Transfer</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="Channel">Channel</label>
+                                <select id="Channel">
+                                    <option value="0">Online</option>
+                                    <option value="1">ATM</option>
+                                    <option value="2">Branch</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="Location">Location ID</label>
+                                <input type="int" id="Location" required value="00010029832">
+                            </div>
+                            <div class="input-group">
+                                <label for="CustomerOccupation">Occupation ID</label>
+                                <input type="number" id="CustomerOccupation" required value="3">
+                            </div>
+                            <div class="input-group">
+                                <label for="DayOfWeek">Day of Week</label>
+                                <select id="DayOfWeek">
+                                    <option value="0">Monday</option>
+                                    <option value="1">Tuesday</option>
+                                    <option value="2">Wednesday</option>
+                                    <option value="3">Thursday</option>
+                                    <option value="4">Friday</option>
+                                    <option value="5">Saturday</option>
+                                    <option value="6">Sunday</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="LoginAttempts">Login Attempts</label>
+                                <input type="number" id="LoginAttempts" required value="1">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-scan">
+                            <span>Analyze Transaction</span>
+                            <i data-feather="zap"></i>
+                        </button>
+                    </form>
+                </section>
+
+                <section class="result-panel glass">
+                    <div class="radar-container" id="radar">
+                        <div class="radar-circle"></div>
+                        <div class="radar-sweep"></div>
+                        <i data-feather="cpu" class="radar-icon"></i>
+                        <p class="radar-text">Awaiting Input...</p>
+                    </div>
+
+                    <div class="result-display hidden" id="resultDisplay">
+                        <div class="risk-badge" id="riskBadge">MODERATE RISK</div>
+                        <h2 id="probabilityText">0.0%</h2>
+                        <p class="prob-label">Fraud Probability Index</p>
+
+                        <div class="meter-bar">
+                            <div class="meter-fill" id="meterFill"></div>
+                        </div>
+                        <p class="system-msg" id="systemMsg">Analyzing transaction metadata...</p>
+
+                        <button class="btn-reset" onclick="resetScanner()">Scan Another</button>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        feather.replace();
+    </script>
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+# Bank Fraud Detection ML Project - Progress Tracker
+
+## Tahap Machine Learning ✅ (SELESAI)
+1. **Pemrosesan Data**: Standarisasi dan Ekstraksi Fitur Tambahan (Transaction Hour & Time Delta).
+2. **Clustering**: Integrasi model KMeans + Visualisasi 2D dengan PCA.
+3. **Pencarian Model Terbaik**: Gradient Boosting memenangkan komparasi (mengalahkan Decision Tree dan Random Forest).
+4. **Hyperparameter Tuning**: Model dioptimasi dan mendapatkan *Cross-Validation Score*: **95.87%**.
+5. **Production Pipeline**: Ekspor seluruh proses ke `fraud_detection_pipeline.pkl`.
+
+## Tahap Dokumentasi dan Web UI ✅ (SELESAI)
+1. **README.md**: Dibuat secara profesional untuk keperluan Github/Kaggle.
+2. **Backend Server API**: `web_app/main.py` menggunakan FastAPI untuk melayani Machine Learning Pipeline dalam sepersekian detik.
+3. **Premium Web UI**: Menggunakan desain Glassmorphism dan satu server statis lokal. Aplikasi analisis penipuan siap pakai!
+
+---
+🚀 **CARA MENJALANKAN DASHBOARD**:
+Buka terminal VS Code dan ketik:
+```bash
+cd web_app
+python main.py
+```
+Lalu buka tautan http://127.0.0.1:8000 di browser Anda.
+
