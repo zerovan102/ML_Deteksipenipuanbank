@@ -42,33 +42,6 @@ Model dilatih menggunakan dataset transaksi bank dengan features seperti:
 
 ---
 
-## 🚀 Cara Menggunakan
-
-### Prerequisites
-
-```bash
-pip install flask
-pip install scikit-learn
-pip install pandas numpy
-pip install tensorflow keras  # Jika menggunakan deep learning
-```
-
-### Menjalankan Notebook
-
-```bash
-jupyter notebook BMLP_Wahid-Ivan-Saputra/ml_project.ipynb
-```
-
-### Menjalankan Web App
-
-```bash
-cd web_app
-python main.py
-# Akses di http://localhost:5000
-```
-
----
-
 ## 📈 Model Performance
 
 - **Clustering**: Mengidentifikasi anomali dan kelompok fraud
