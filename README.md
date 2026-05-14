@@ -1,7 +1,4 @@
 # ML_Deteksipenipuanbank
-<img width="1859" height="937" alt="Screenshot 2026-04-17 134222" src="https://github.com/user-attachments/assets/2cda793f-d866-4967-be04-23f784620492" />
-
-
 ## 🏦 Bank Fraud Detection Machine Learning Project
 
 Proyek machine learning untuk mendeteksi transaksi penipuan (fraud) di perbankan menggunakan teknik clustering dan klasifikasi.
